@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chat Público</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar">
+
+            <h1>Chats</h1>
+
+            <form id="createRoomForm">
+
+                <input
+                    id="usernameInput"
+                    type="text"
+                    placeholder="Seu nome"
+                    required
+                >
+
+                <input
+                    id="roomNameInput"
+                    type="text"
+                    placeholder="Nome do chat"
+                    required
+                >
+
+                <button type="submit">
+                    Criar chat
+                </button>
+
+            </form>
+
+            <hr>
+
+            <h3>Salas disponíveis</h3>
+
+            <div id="roomsList"></div>
+
+        </aside>
+
+
+        <main class="chat">
+
+            <header class="chat-header">
+
+                <div>
+                    <h2 id="roomTitle">
+                        Selecione um chat
+                    </h2>
+
+                    <span id="usersCount">
+                        0 usuários
+                    </span>
+                </div>
+
+                <button id="leaveButton">
+                    Sair
+                </button>
+
+            </header>
+
+
+            <section id="messages" class="messages">
+            </section>
+
+
+            <form id="messageForm" class="message-form">
+
+            <textarea
+                id="messageInput"
+                placeholder="Digite uma mensagem..."
+                autocomplete="off"
+            ></textarea>
+
+                <button type="submit">
+                    Enviar
+                </button>
+
+            </form>
+
+        </main>
+
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
